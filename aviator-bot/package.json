@@ -1,0 +1,21 @@
+{
+  "name": "aviator-bot",
+  "version": "1.0.0",
+  "description": "Servidor Node.js com Puppeteer para login automático, captura contínua de multiplicadores do Aviator e API REST.",
+  "type": "module",
+  "main": "bot.js",
+  "scripts": {
+    "build": "node --check bot.js",
+    "render-build": "npm install && npm run build && npx puppeteer browsers install chrome",
+    "start": "node bot.js",
+    "dev": "BOT_HEADLESS=false node bot.js",
+    "check": "node --check bot.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "puppeteer": "^24.7.1"
+  },
+  "devDependencies": {
+    "pm2": "^5.4.3"
+  }
+}
