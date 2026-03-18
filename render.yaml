@@ -1,0 +1,35 @@
+services:
+  - type: web
+    name: aviator-bot
+    runtime: node
+    rootDir: aviator-bot
+    plan: starter
+    buildCommand: npm run render-build
+    startCommand: npm start
+    healthCheckPath: /health
+    autoDeploy: true
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: BOT_HEADLESS
+        value: "true"
+      - key: CAPTURE_INTERVAL_MS
+        value: "5000"
+      - key: MAX_REGISTROS
+        value: "100"
+      - key: PUPPETEER_CACHE_DIR
+        value: .cache/puppeteer
+      - key: MEGAGAME_USERNAME
+        sync: false
+      - key: MEGAGAME_PASSWORD
+        sync: false
+      - key: LOGIN_USERNAME_SELECTOR
+        sync: false
+      - key: LOGIN_PASSWORD_SELECTOR
+        sync: false
+      - key: LOGIN_SUBMIT_SELECTOR
+        sync: false
+      - key: SELETOR_VELAS
+        sync: false
+      - key: PUPPETEER_EXECUTABLE_PATH
+        sync: false
